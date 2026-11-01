@@ -64,6 +64,8 @@ function showAuth(){
   $('#app').style.display='none'; $('#auth').style.display='grid';
   $('#aServer').value=SERVER;
   if(!SERVER) $('#serverRow').style.display='';
+  // Server is already set (built into the app, or this is the server's own website): hide the option.
+  $('#aServerToggle').style.display = SERVER ? 'none' : '';
   setTab(authTab);
 }
 function setTab(t){ authTab=t; document.querySelectorAll('.auth .tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
