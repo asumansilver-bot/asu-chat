@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: asu-chat
+    runtime: node
+    rootDir: server
+    buildCommand: "true"
+    startCommand: node server.js
+    plan: free
+    healthCheckPath: /api/health

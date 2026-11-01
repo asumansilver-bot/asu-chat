@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#0E9F6E">
+<title>ASU-CHAT</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="config.js"></script>
+</head>
+<body>
+<div class="conn" id="conn">Connecting…</div>
+
+<div class="auth" id="auth" style="display:none">
+  <form class="card" id="authForm" autocomplete="on">
+    <div class="big"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="84" height="84"><path d="M28 14h42a18 18 0 0 1 18 18v20a18 18 0 0 1-18 18H45L17 88l5-19.5A18 18 0 0 1 10 52V32a18 18 0 0 1 18-18z" fill="#0E9F6E"/><path d="M36.5 60 49 27.5 61.5 60" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="45" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="49" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="53" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="85" cy="16" r="10.5" fill="var(--panel)"/><circle cx="85" cy="16" r="7" fill="#FF7A59"/></svg></div>
+    <h1>ASU<span class="l">CHAT</span></h1>
+    <p class="tag">Talk freely. Stay close.</p>
+    <div class="tabs"><button type="button" class="on" data-tab="login">Sign in</button><button type="button" data-tab="register">Create account</button></div>
+    <div id="nameRow" style="display:none"><input class="field" id="aName" placeholder="Your name" maxlength="40" autocomplete="name"></div>
+    <input class="field" id="aUser" placeholder="Username" maxlength="30" autocapitalize="none" autocomplete="username">
+    <input class="field" id="aPass" type="password" placeholder="Password" autocomplete="current-password">
+    <div id="serverRow" style="display:none"><div class="lbl">Server address</div><input class="field" id="aServer" placeholder="https://your-asu-chat.onrender.com" autocapitalize="none" inputmode="url"></div>
+    <div class="err" id="aErr"></div>
+    <button class="btn" style="width:100%" id="aGo" type="submit">Sign in</button>
+    <button type="button" class="link" id="aServerToggle" style="background:none">Change server</button>
+  </form>
+</div>
+
+<div class="app" id="app" style="display:none">
+  <aside class="side">
+    <div class="side-head">
+      <button class="avatar sm" id="meAvatar" title="My profile"></button>
+      <div class="brand"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="34" height="34"><path d="M28 14h42a18 18 0 0 1 18 18v20a18 18 0 0 1-18 18H45L17 88l5-19.5A18 18 0 0 1 10 52V32a18 18 0 0 1 18-18z" fill="#0E9F6E"/><path d="M36.5 60 49 27.5 61.5 60" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="45" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="49" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="53" cy="52.5" r="2" fill="#FFFFFF"/><circle cx="85" cy="16" r="10.5" fill="var(--panel2)"/><circle cx="85" cy="16" r="7" fill="#FF7A59"/></svg></div><span class="wm"><b>ASU</b>CHAT</span></div>
+      <button class="icon-btn" id="newGroupBtn" title="New group"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></button>
+      <button class="icon-btn" id="newChatBtn" title="New chat"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
+    </div>
+    <div class="search"><label><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input id="search" placeholder="Search chats" autocomplete="off"></label></div>
+    <div class="list" id="list"><div class="loading"><div class="spin"></div>Loading chats…</div></div>
+  </aside>
+  <main class="chat" id="chat"></main>
+</div>
+
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
+<div class="lightbox" id="lightbox"><img id="lbImg" alt=""></div>
+<div class="toast" id="toast"></div>
+<input type="file" id="fileIn" accept="image/*" hidden>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ASU-CHAT mark: white speech bubble, green "A" with three dots, coral ping -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="100" android:viewportHeight="100">
+    <group android:scaleX="0.62" android:scaleY="0.62" android:translateX="19.5" android:translateY="20">
+        <path android:fillColor="#FFFFFF"
+            android:pathData="M28,14h42a18,18 0,0 1,18 18v20a18,18 0,0 1,-18 18H45L17,88l5,-19.5A18,18 0,0 1,10 52V32a18,18 0,0 1,18 -18z" />
+        <path android:pathData="M36.5,60 L49,27.5 L61.5,60" android:fillColor="#00000000"
+            android:strokeColor="#0E9F6E" android:strokeWidth="7.5" android:strokeLineCap="round" android:strokeLineJoin="round" />
+        <path android:fillColor="#0E9F6E" android:pathData="M43,52.5a2,2 0,1 0,4 0a2,2 0,1 0,-4 0zM47,52.5a2,2 0,1 0,4 0a2,2 0,1 0,-4 0zM51,52.5a2,2 0,1 0,4 0a2,2 0,1 0,-4 0z" />
+        <path android:fillColor="#0E9F6E" android:pathData="M74.5,16a10.5,10.5 0,1 0,21 0a10.5,10.5 0,1 0,-21 0z" />
+        <path android:fillColor="#FF7A59" android:pathData="M78,16a7,7 0,1 0,14 0a7,7 0,1 0,-14 0z" />
+    </group>
+</vector>
